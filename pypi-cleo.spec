@@ -4,7 +4,7 @@
 #
 Name     : pypi-cleo
 Version  : 2.0.1
-Release  : 17
+Release  : 18
 URL      : https://files.pythonhosted.org/packages/83/51/b2609f0998671bef90b83407e75dbd8e3812e513e88f548d1b10b48a1d12/cleo-2.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/83/51/b2609f0998671bef90b83407e75dbd8e3812e513e88f548d1b10b48a1d12/cleo-2.0.1.tar.gz
 Summary  : Cleo allows you to create beautiful and testable command-line interfaces.
@@ -15,6 +15,9 @@ Requires: pypi-cleo-python = %{version}-%{release}
 Requires: pypi-cleo-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(poetry_core)
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 # Cleo
@@ -62,15 +65,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1669221467
+export SOURCE_DATE_EPOCH=1672263174
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . crashtest
 pypi-dep-fix.py . rapidfuzz
