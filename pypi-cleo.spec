@@ -7,7 +7,7 @@
 #
 Name     : pypi-cleo
 Version  : 2.1.0
-Release  : 22
+Release  : 23
 URL      : https://files.pythonhosted.org/packages/3c/30/f7960ed7041b158301c46774f87620352d50a9028d111b4211187af13783/cleo-2.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3c/30/f7960ed7041b158301c46774f87620352d50a9028d111b4211187af13783/cleo-2.1.0.tar.gz
 Summary  : Cleo allows you to create beautiful and testable command-line interfaces.
