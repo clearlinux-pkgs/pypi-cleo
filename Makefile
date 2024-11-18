@@ -1,5 +1,5 @@
 PKG_NAME := pypi-cleo
-URL = https://files.pythonhosted.org/packages/3c/30/f7960ed7041b158301c46774f87620352d50a9028d111b4211187af13783/cleo-2.1.0.tar.gz
+URL = https://files.pythonhosted.org/packages/33/a9/ad070910b3c37a3e6e136b37ca1d046b9629d98a26872d9eb20d27fc2451/cleo-2.2.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
